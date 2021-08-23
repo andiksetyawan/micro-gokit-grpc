@@ -1,0 +1,18 @@
+syntax = "proto3";
+
+package hello;
+
+option go_package = "gokit-grpc/proto;hello";
+
+message HelloResponse {
+  string Message = 1;
+}
+
+message HelloRequest {
+  string Name  = 1;
+}
+
+service hello {
+  rpc SayHello(HelloRequest) returns (HelloResponse);
+}
+
